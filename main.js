@@ -40,6 +40,8 @@ function handleButton(button) {
     } else if (button.id === 'operate') {
         operand2 = displayNumber;
         displayNumber = evaluate(operation, operand1, operand2)
+    } else if (button.id === 'polarity') {
+        displayNumber *= -1
     } else if (button.id === 'AC') {
         clear()
     } else {
