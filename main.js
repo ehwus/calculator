@@ -14,8 +14,11 @@ let displayNumber;
 // logic to handle button press
 function handleButton(button) {
     if (button.id >= 0 && button.id < 10) {
-        displayNumber = button.id
-        console.log(`Number ${button.id}`)
+        if (displayNumber === undefined) {
+            displayNumber = button.id
+        } else {
+            displayNumber = parseInt(displayNumber.toString() + button.id.toString())
+        }
     } else {
         console.log(button.id)
     }
