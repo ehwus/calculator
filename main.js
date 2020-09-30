@@ -29,6 +29,13 @@ function evaluate(operation, x, y) {
     }
 }
 
+// function to reset everything
+function clear() {
+    displayNumber = undefined;
+    operand1 = undefined;
+    operand2 = undefined;
+}
+
 // logic to handle button press
 function handleButton(button) {
     if (button.id >= 0 && button.id < 10) {
@@ -40,6 +47,8 @@ function handleButton(button) {
     } else if (button.id === 'operate') {
         operand2 = displayNumber;
         displayNumber = evaluate(operation, operand1, operand2)
+    } else if (button.id === 'AC') {
+        clear()
     } else {
         operand1 = displayNumber;
         operation = button.id
