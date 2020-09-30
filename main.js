@@ -56,6 +56,9 @@ function updateDisplay() {
     if (displayNumber === undefined) {
         display.innerHTML = ""
     } else {
+        if (displayNumber % 1 !== 0) {
+            displayNumber = parseFloat(displayNumber.toFixed(4))
+        }
         display.innerHTML = displayNumber
     }
     
