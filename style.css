@@ -1,20 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
 .container {
     align-self: center;
     margin: 0 auto;
     max-width: 400px;
     height: 400px;
-    background: lightpink;
-    border: thin solid black;
+    background: #EC7874;
+    border: thin solid #601700;
+    padding: 15px;
 }
 .display {
     position: relative;
     top: 0px;
     height: 50px;
-    background: lightblue;
+    background: #FAC05E;
     width: 100%;
-    border-bottom: thin solid black;
+    border: thin solid #601700;
     text-align: right;
     font-size: 45px;
+}
+
+.operator {
+    background: #59CD90 !important;
 }
 
 .buttons {
@@ -25,8 +36,8 @@
 }
 
 .buttons button {
-    background: lightblue;
-    border: thin solid black;
+    background: #00ACDF;
+    border: thin solid #601700;
     padding: 15px;
     margin: 5px;
     font-size: larger;
