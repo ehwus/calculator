@@ -4,13 +4,17 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.page {
+    background-color: #601700;
+}
+
 .container {
     align-self: center;
     margin: 0 auto;
     max-width: 400px;
     height: 400px;
     background: #EC7874;
-    border: thin solid #601700;
+    border: thick solid black;
     padding: 15px;
 }
 .display {
