@@ -33,7 +33,7 @@ function clear() {
 function handleButton(button) {
     if (button.id >= 0 && button.id < 10) {
         if (displayNumber === undefined) {
-            displayNumber = button.id
+            displayNumber = parseInt(button.id)
         } else {
             displayNumber = parseInt(displayNumber.toString() + button.id.toString())
         }
