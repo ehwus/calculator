@@ -1,0 +1,35 @@
+.container {
+    align-self: center;
+    margin: 0 auto;
+    max-width: 400px;
+    height: 400px;
+    background: lightpink;
+    border: thin solid black;
+}
+.display {
+    position: relative;
+    top: 0px;
+    height: 50px;
+    background: lightblue;
+    width: 100%;
+    border-bottom: thin solid black;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    margin-top: 10px;
+}
+
+.buttons button {
+    background: lightblue;
+    border: thin solid black;
+    padding: 15px;
+    margin: 5px;
+}
+
+.buttons button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
