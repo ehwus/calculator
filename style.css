@@ -36,3 +36,7 @@
     opacity: 0.8;
     cursor: pointer;
 }
+
+.zero {
+    grid-column: 1 / 3;
+}
