@@ -10,6 +10,9 @@ const display = document.querySelector(".display");
 
 // VARIABLES
 let displayNumber;
+let operand1;
+let operand2;
+let operation;
 
 // logic to handle button press
 function handleButton(button) {
@@ -19,8 +22,18 @@ function handleButton(button) {
         } else {
             displayNumber = parseInt(displayNumber.toString() + button.id.toString())
         }
-    } else {
+    } else if (button.id === 'operate') {
+        operand2 = displayNumber;
+        displayNumber = operate(operation, operand1, operand2);
+        updateDisplay()
+    }
+    else {
+        operand1 = displayNumber;
         console.log(button.id)
+        operation = button.id
+        console.log(operation)
+        displayNumber = undefined;
+        updateDisplay();
     }
     updateDisplay()
 }
