@@ -14,6 +14,21 @@ let operand1;
 let operand2;
 let operation;
 
+// evaluate variables
+function evaluate(operation, x, y) {
+    if (operation === 'multiply') {
+        return x * y;
+    } else if (operation === 'add') {
+        return x + y;
+    } else if (operation === 'subtract') {
+        return x - y;
+    } else if (operation === 'divide') {
+        return x / y;
+    } else if (operation === 'modulo') {
+        return x % y;
+    }
+}
+
 // logic to handle button press
 function handleButton(button) {
     if (button.id >= 0 && button.id < 10) {
@@ -24,16 +39,11 @@ function handleButton(button) {
         }
     } else if (button.id === 'operate') {
         operand2 = displayNumber;
-        displayNumber = operate(operation, operand1, operand2);
-        updateDisplay()
-    }
-    else {
+        displayNumber = evaluate(operation, operand1, operand2)
+    } else {
         operand1 = displayNumber;
-        console.log(button.id)
         operation = button.id
-        console.log(operation)
         displayNumber = undefined;
-        updateDisplay();
     }
     updateDisplay()
 }
