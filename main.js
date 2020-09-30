@@ -51,7 +51,12 @@ function handleButton(button) {
 }
 // update display using the global displayNumber variable
 function updateDisplay() {
-    display.innerHTML = displayNumber
+    if (displayNumber === undefined) {
+        display.innerHTML = ""
+    } else {
+        display.innerHTML = displayNumber
+    }
+    
 }
 
 // add listeners to buttons
