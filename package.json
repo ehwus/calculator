@@ -1,0 +1,23 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "Odin Project: Calculator - Build a calculator from scratch using HTML/CSS/JS. Hosted on netlify here: https://compassionate-bardeen-21d976.netlify.app/",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ehwus/calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ehwus/calculator/issues"
+  },
+  "homepage": "https://github.com/ehwus/calculator#readme",
+  "devDependencies": {
+    "prettier": "^2.5.1"
+  }
+}
