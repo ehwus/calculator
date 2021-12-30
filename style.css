@@ -6,6 +6,7 @@
 
 .page {
     background-color: #601700;
+    padding: 30px 10px;
 }
 
 .container {
@@ -19,7 +20,7 @@
 }
 .display {
     position: relative;
-    top: 0px;
+    top: 0;
     height: 50px;
     background: #FAC05E;
     width: 100%;

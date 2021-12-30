@@ -1,73 +1,78 @@
-// CONSTANTS
-const display = document.querySelector(".display");
+(() => {
+  // CONSTANTS
+  const display = document.querySelector(".display");
 
-// VARIABLES
-let displayNumber;
-let operand1;
-let operand2;
-let operation;
+  // VARIABLES
+  let displayNumber;
+  let operand1;
+  let operand2;
+  let operation;
 
-// evaluate variables
-function evaluate(operation, x, y) {
-    if (operation === 'multiply') {
+  // evaluate variables
+  const evaluate = (operation, x, y) => {
+    switch (operation) {
+      case "multiply":
         return x * y;
-    } else if (operation === 'add') {
+      case "add":
         return x + y;
-    } else if (operation === 'subtract') {
+      case "subtract":
         return x - y;
-    } else if (operation === 'divide') {
+      case "divide":
         return x / y;
-    } else if (operation === 'modulo') {
+      case "modulo":
         return x % y;
+      default:
+        console.error("Unknown operation");
+        return;
     }
-}
+  };
 
-// function to reset everything
-function clear() {
+  // function to reset everything
+  const clear = () => {
     displayNumber = undefined;
     operand1 = undefined;
     operand2 = undefined;
-}
+  };
 
-// logic to handle button press
-function handleButton(button) {
+  // logic to handle button press
+  const handleButton = (button) => {
     if (button.id >= 0 && button.id < 10) {
-        if (displayNumber === undefined) {
-            displayNumber = parseInt(button.id)
-        } else {
-            displayNumber = parseInt(displayNumber.toString() + button.id.toString())
-        }
-    } else if (button.id === 'operate') {
-        operand2 = displayNumber;
-        displayNumber = evaluate(operation, operand1, operand2)
-    } else if (button.id === 'polarity') {
-        displayNumber *= -1
-    } else if (button.id === 'AC') {
-        clear()
+      if (displayNumber === undefined) {
+        displayNumber = parseInt(button.id);
+      } else {
+        displayNumber = parseInt(
+          displayNumber.toString() + button.id.toString()
+        );
+      }
+    } else if (button.id === "operate") {
+      operand2 = displayNumber;
+      displayNumber = evaluate(operation, operand1, operand2);
+    } else if (button.id === "polarity") {
+      displayNumber *= -1;
+    } else if (button.id === "AC") {
+      clear();
     } else {
-        operand1 = displayNumber;
-        operation = button.id
-        displayNumber = undefined;
+      operand1 = displayNumber;
+      operation = button.id;
+      displayNumber = undefined;
     }
-    updateDisplay()
-}
-// update display using the global displayNumber variable
-function updateDisplay() {
-    if (displayNumber === undefined) {
-        display.innerHTML = ""
-    } else {
-        if (displayNumber % 1 !== 0) {
-            displayNumber = parseFloat(displayNumber.toFixed(4))
-        }
-        display.innerHTML = displayNumber
-    }
-    
-}
+    updateDisplay();
+  };
 
-// add listeners to buttons
-const buttons = document.querySelectorAll('.buttons button')
-for (const button of buttons) {
-    button.addEventListener("click", function () {
-        handleButton(button)
-    })
-} 
+  // update display using the global displayNumber variable
+  const updateDisplay = () => {
+    if (displayNumber === undefined) {
+      display.innerHTML = "";
+    } else {
+      if (displayNumber % 1 !== 0)
+        displayNumber = parseFloat(displayNumber.toFixed(4));
+      display.innerHTML = displayNumber;
+    }
+  };
+
+  // add listeners to buttons
+  const buttons = document.querySelectorAll(".buttons button");
+  buttons.forEach((button) =>
+    button.addEventListener("click", () => handleButton(button))
+  );
+})();
